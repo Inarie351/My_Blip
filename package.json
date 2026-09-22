@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node bin/blip.js start",
     "stop": "node bin/blip.js stop",
-    "check": "for f in src/cli.js src/config.js src/runtime.js src/characters.js src/pixelart.js src/wizard.js src/tmux.js src/sound.js bin/blip.js; do node --check \"$f\" || exit 1; done"
+    "check": "for f in src/cli.js src/config.js src/runtime.js src/characters.js src/pixelart.js src/wizard.js src/tmux.js src/sound.js bin/blip.js; do node --check \"$f\" || exit 1; done",
+    "test": "node --test 'test/*.test.js'"
   },
   "keywords": [
     "cli",
