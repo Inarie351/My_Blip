@@ -10,6 +10,7 @@ const {
 } = require('./config');
 const { startRuntime } = require('./runtime');
 const { runSetupWizard } = require('./wizard');
+const { CHARACTER_KEYS } = require('./characters');
 const tmux = require('./tmux');
 
 const RENDER_SCRIPT = path.join(__dirname, '..', 'bin', 'blip.js');
@@ -104,7 +105,7 @@ function createProgram() {
     .command('start')
     .description('Lance le personnage dans le terminal')
     .option('-n, --name <name>', 'Nom du personnage')
-    .option('-c, --character <character>', 'Personnage à afficher (chien, chat, lapin, fille, garcon)')
+    .option('-c, --character <character>', `Personnage à afficher (${CHARACTER_KEYS.join(', ')})`)
     .option('-s, --size <size>', 'Taille d’affichage')
     .option('--sound', 'Active le mode sonore')
     .action(startAction);

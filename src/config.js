@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
+const { CHARACTER_KEYS } = require('./characters');
 
 const BLIP_DIR = path.join(os.homedir(), '.blip');
 const CONFIG_PATH = path.join(BLIP_DIR, 'config.json');
@@ -53,7 +54,7 @@ function ensureConfig({ name, character, size, sound } = {}) {
     ...(typeof sound === 'boolean' ? { sound } : {}),
   };
 
-  if (!['chien', 'chat', 'lapin', 'fille', 'garcon'].includes(next.character)) {
+  if (!CHARACTER_KEYS.includes(next.character)) {
     next.character = 'chien';
   }
 
