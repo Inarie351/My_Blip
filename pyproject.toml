@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my-blip"
+version = "0.1.0"
+description = "Companion animé dans le terminal"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "My_Blip" }]
+
+[project.scripts]
+my-blip = "my_blip.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

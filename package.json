@@ -1,0 +1,29 @@
+{
+  "name": "my_blip",
+  "version": "0.1.0",
+  "description": "Companion animé dans le terminal",
+  "bin": {
+    "blip": "bin/blip.js"
+  },
+  "main": "src/cli.js",
+  "scripts": {
+    "start": "node bin/blip.js start",
+    "stop": "node bin/blip.js stop",
+    "check": "for f in src/cli.js src/config.js src/runtime.js src/characters.js src/pixelart.js src/wizard.js src/tmux.js src/sound.js bin/blip.js; do node --check \"$f\" || exit 1; done"
+  },
+  "keywords": [
+    "cli",
+    "terminal",
+    "pixel-art",
+    "companion"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "commander": "^12.1.0",
+    "mic": "^2.1.0"
+  },
+  "optionalDependencies": {
+    "vosk": "^0.3.39"
+  }
+}
